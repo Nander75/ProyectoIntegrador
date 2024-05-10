@@ -2,28 +2,31 @@ package com.dam.view;
 
 import javax.swing.JPanel;
 import javax.swing.JButton;
-import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
-import javax.swing.SwingConstants;
 import java.awt.Color;
-import javax.swing.border.TitledBorder;
-import javax.swing.border.EtchedBorder;
+
+import com.dam.control.VListener;
+import com.dam.model.DatosUsuarioPI;
+
 import javax.swing.JTextField;
-import java.awt.Component;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
 public class PnlRegistrarse extends JPanel {
 
+	public static final String ACT_CMN_BTN_INICIARSESION = "Iniciar Sesion";
+	public static final String ACT_CMN_BTN_ACEPTAR = "Aceptar";
+	
 	private static final int ANCHO = 630;
 	private static final int ALTO = 650;
+	
 	private JTextField txtRegistrarse;
 	private JTextField txtNombre;
-	private JTextField txtContrasena;
-	private JButton btnSiguiente;
+	private JTextField txtContrasenia;
+	private JButton btnAceptar;
 	private JButton btnIniciarSesion;
-	private JTextField txtApellidos;
-	private JTextField txtNomUsuario;
+	private JTextField txtUsuario;
+	private JTextField txtComprContrasenia;
 	private JTextField txtCorreo;
 	
 	public PnlRegistrarse() {
@@ -52,45 +55,89 @@ public class PnlRegistrarse extends JPanel {
 		add(txtNombre);
 		txtNombre.setColumns(10);
 		
-		txtContrasena = new JTextField();
-		txtContrasena.setText("Introduce tu contraseña");
-		txtContrasena.setFont(new Font("Tahoma", Font.BOLD, 14));
-		txtContrasena.setBounds(115, 400, 400, 40);
-		add(txtContrasena);
-		txtContrasena.setColumns(10);
+		txtContrasenia = new JTextField();
+		txtContrasenia.setText("Introduce tu contraseña");
+		txtContrasenia.setFont(new Font("Tahoma", Font.BOLD, 14));
+		txtContrasenia.setBounds(115, 340, 400, 40);
+		add(txtContrasenia);
+		txtContrasenia.setColumns(10);
 		
-		btnSiguiente = new JButton("Siguiente");
-		btnSiguiente.setFont(new Font("Trebuchet MS", Font.BOLD, 18));
-		btnSiguiente.setBackground(new Color(255, 255, 255));
-		btnSiguiente.setBounds(215, 475, 199, 36);
-		add(btnSiguiente);
+		btnAceptar = new JButton(ACT_CMN_BTN_ACEPTAR);
+		btnAceptar.setFont(new Font("Trebuchet MS", Font.BOLD, 18));
+		btnAceptar.setBackground(new Color(255, 255, 255));
+		btnAceptar.setBounds(215, 475, 199, 36);
+		add(btnAceptar);
 		
-		btnIniciarSesion = new JButton("Iniciar Sesion");
+		btnIniciarSesion = new JButton(ACT_CMN_BTN_INICIARSESION);
 		btnIniciarSesion.setFont(new Font("Trebuchet MS", Font.BOLD, 15));
 		btnIniciarSesion.setBackground(new Color(255, 255, 255));
 		btnIniciarSesion.setBounds(242, 539, 147, 36);
 		add(btnIniciarSesion);
 		
-		txtApellidos = new JTextField();
-		txtApellidos.setText("Introduce tus apellidos");
-		txtApellidos.setFont(new Font("Tahoma", Font.BOLD, 14));
-		txtApellidos.setColumns(10);
-		txtApellidos.setBounds(115, 220, 400, 40);
-		add(txtApellidos);
+		txtUsuario = new JTextField();
+		txtUsuario.setText("Introduce tu nombre de usuario");
+		txtUsuario.setFont(new Font("Tahoma", Font.BOLD, 14));
+		txtUsuario.setColumns(10);
+		txtUsuario.setBounds(115, 220, 400, 40);
+		add(txtUsuario);
 		
-		txtNomUsuario = new JTextField();
-		txtNomUsuario.setText("Introduce tu nombre de usuario ");
-		txtNomUsuario.setFont(new Font("Tahoma", Font.BOLD, 14));
-		txtNomUsuario.setColumns(10);
-		txtNomUsuario.setBounds(115, 280, 400, 40);
-		add(txtNomUsuario);
+		txtComprContrasenia = new JTextField();
+		txtComprContrasenia.setText("Vuelve a introducir la contraseña");
+		txtComprContrasenia.setFont(new Font("Tahoma", Font.BOLD, 14));
+		txtComprContrasenia.setColumns(10);
+		txtComprContrasenia.setBounds(115, 400, 400, 40);
+		add(txtComprContrasenia);
 		
 		txtCorreo = new JTextField();
 		txtCorreo.setText("Introduce tu correo electrónico");
 		txtCorreo.setFont(new Font("Tahoma", Font.BOLD, 14));
 		txtCorreo.setColumns(10);
-		txtCorreo.setBounds(115, 340, 400, 40);
+		txtCorreo.setBounds(115, 280, 400, 40);
 		add(txtCorreo);
+		
+	}
+	
+	public void hacerVisible() {
+		setVisible(true);
+	}
+	
+	public void setListener (VListener listener) {
+		btnIniciarSesion.addActionListener(listener);
+		btnAceptar.addActionListener(listener);
+	}
+	
+	public DatosUsuarioPI getDatosUsuario() {
+		DatosUsuarioPI du =null;
+		
+		String nom = txtNombre.getText().trim();
+		String correo = txtCorreo.getText().trim();
+		String user = txtUsuario.getText().trim();
+		String pwd = txtContrasenia.getText().trim();
+		String pwdConfirm = txtComprContrasenia.getText().trim();
+		
+		if (nom.isEmpty()) {
+			JOptionPane.showMessageDialog(this, "El nombre es un dato obligatorio", 
+					"Error de datos", JOptionPane.ERROR_MESSAGE);
+		}else if (correo.isEmpty()) {
+			JOptionPane.showMessageDialog(this, "El email es un dato obligatorio", 
+					"Error de datos", JOptionPane.ERROR_MESSAGE);
+		}else if (user.isEmpty()) {
+			JOptionPane.showMessageDialog(this, "El nombre de usuario es un dato obligatorio", 
+					"Error de datos", JOptionPane.ERROR_MESSAGE);
+		} else if (pwd.isEmpty() || pwdConfirm.isEmpty()) {
+			JOptionPane.showMessageDialog(this, "La contraseña es un dato obligatorio", 
+					"Error de datos", JOptionPane.ERROR_MESSAGE);
+		} else if (pwd.length() < 8) {
+			JOptionPane.showMessageDialog(this, "La contraseña debe tener al menos 8 caracteres", 
+					"Error de datos", JOptionPane.ERROR_MESSAGE);
+		} else if(!pwd.equals(pwdConfirm)){
+			JOptionPane.showMessageDialog(this, "La contraseña y la confirmación no coinciden", 
+					"Error de datos", JOptionPane.ERROR_MESSAGE);
+		}else {
+			du = new DatosUsuarioPI(user, pwd);
+		}
+		
+		return du;
 		
 	}
 }

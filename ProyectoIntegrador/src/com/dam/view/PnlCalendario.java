@@ -6,14 +6,23 @@ import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.JTextField;
+
+import com.dam.control.VListener;
+
 import java.awt.Font;
 
 public class PnlCalendario extends JPanel {
+	
+	
+	private static final String ACT_CMN_BTN_VOLVER = " ";
 	private static final int ANCHO = 630;
 	private static final int ALTO = 650;
+	
 	private JTextField txtActDiaria;
 	private JTextField txtDiasS;
 	private JTextField txtDiasSeguidos;
+	private JButton btnCalendario;
+	private JButton btnVolver;
 	
 	public PnlCalendario() {
 		
@@ -26,7 +35,7 @@ public class PnlCalendario extends JPanel {
 		setLayout(null);
 		setBackground(new Color(84, 90, 246));
 		
-		JButton btnVolver = new JButton("");
+		btnVolver = new JButton(ACT_CMN_BTN_VOLVER);
 		btnVolver.setIcon(new ImageIcon(PnlCalendario.class.getResource("/img/imgVolver.jpg")));
 		btnVolver.setBounds(553, 10, 77, 91);
 		add(btnVolver);
@@ -40,11 +49,12 @@ public class PnlCalendario extends JPanel {
 		add(txtActDiaria);
 		txtActDiaria.setColumns(10);
 		
-		JButton btnCalendario = new JButton("");
+		btnCalendario = new JButton("");
 		btnCalendario.setIcon(new ImageIcon(PnlCalendario.class.getResource("/img/imgCalendario.jpg")));
 		btnCalendario.setBounds(91, 172, 447, 231);
 		add(btnCalendario);
 		
+		//TODO cada vez que pulsen iniciar sesion se suma uno a los dias seguidos
 		txtDiasS = new JTextField();
 		txtDiasS.setText("    Días Seguidos");
 		txtDiasS.setFont(new Font("Tahoma", Font.BOLD, 24));
@@ -61,7 +71,13 @@ public class PnlCalendario extends JPanel {
 		txtDiasSeguidos.setBounds(263, 538, 96, 19);
 		add(txtDiasSeguidos);
 		txtDiasSeguidos.setColumns(10);
-		
-		
+	}
+	
+	public void hacerVisible() {
+		setVisible(true);
+	}
+	
+	public void setListener (VListener listener) {
+		btnVolver.addActionListener(listener);
 	}
 }

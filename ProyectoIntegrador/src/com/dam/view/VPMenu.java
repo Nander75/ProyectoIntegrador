@@ -5,6 +5,9 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
+
+import com.dam.control.VListener;
+
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.ImageIcon;
@@ -12,8 +15,14 @@ import java.awt.Color;
 
 public class VPMenu extends JFrame {
 
+	public static final String ACT_CMN_BTN_INICIARSESION = "Iniciar Sesion";
+	public static final String ACT_CMN_BTN_TERMINOS = "Terminos";
+	public static final String ACT_CMN_BTN_PRIVACIDAD = "Privacidad";
+	public static final String ACT_CMN_BTN_REGISTRAR = "Registrarse";
+	
 	private static final int ANCHO = 630;
 	private static final int ALTO = 650;
+	
 	private JButton btnIniciarSesion;
 	private JButton btnRegistrarse;
 	private JButton btnPrivacidad;
@@ -25,7 +34,7 @@ public class VPMenu extends JFrame {
 		
 		configurarFrame();
 		
-		crearComponentes();
+		inicializarComponentes();
 	}
 	
 	private void configurarFrame() {
@@ -36,31 +45,31 @@ public class VPMenu extends JFrame {
 		setLocation((pantalla.width - this.getSize().width) / 2,  (pantalla.height - this.getSize().height) / 2); 			
 	}
 	
-	private void crearComponentes() {
+	private void inicializarComponentes() {
 		getContentPane().setBackground(new Color(84, 90, 246));
 		getContentPane().setForeground(new Color(84, 90, 246));
 		getContentPane().setLayout(null);
 		
-		btnIniciarSesion = new JButton("Iniciar Sesion");
+		btnIniciarSesion = new JButton(ACT_CMN_BTN_INICIARSESION);
 		btnIniciarSesion.setForeground(new Color(0, 0, 0));
 		btnIniciarSesion.setBackground(new Color(255, 255, 0));
 		btnIniciarSesion.setFont(new Font("Trebuchet MS", Font.BOLD, 18));
 		btnIniciarSesion.setBounds(208, 344, 199, 36);
 		getContentPane().add(btnIniciarSesion);
 		
-		btnRegistrarse = new JButton("Registrarse");
+		btnRegistrarse = new JButton(ACT_CMN_BTN_REGISTRAR);
 		btnRegistrarse.setBackground(new Color(255, 255, 0));
 		btnRegistrarse.setFont(new Font("Trebuchet MS", Font.BOLD, 18));
 		btnRegistrarse.setBounds(208, 417, 199, 36);
 		getContentPane().add(btnRegistrarse);
 		
-		btnPrivacidad = new JButton("Privacidad");
+		btnPrivacidad = new JButton(ACT_CMN_BTN_PRIVACIDAD);
 		btnPrivacidad.setBackground(new Color(255, 255, 0));
 		btnPrivacidad.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
 		btnPrivacidad.setBounds(115, 502, 135, 27);
 		getContentPane().add(btnPrivacidad);
 		
-		btnTerminos = new JButton("Terminos");
+		btnTerminos = new JButton(ACT_CMN_BTN_TERMINOS);
 		btnTerminos.setBackground(new Color(255, 255, 0));
 		btnTerminos.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
 		btnTerminos.setBounds(365, 502, 135, 27);
@@ -71,4 +80,16 @@ public class VPMenu extends JFrame {
 		btnImagen.setBounds(226, 59, 163, 222);
 		getContentPane().add(btnImagen);
 	}
+	
+	public void hacerVisible() {
+		setVisible(true);
+	}
+	
+	public void setListener (VListener listener) {
+		btnRegistrarse.addActionListener(listener);
+		btnIniciarSesion.addActionListener(listener);
+		btnTerminos.addActionListener(listener);
+	}
+	
+	//TODO public DatosUsuario getDatosUsuario()
 }

@@ -5,22 +5,32 @@ import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JSpinner;
 import javax.swing.JTextField;
-import javax.swing.JRadioButton;
+
+import com.dam.control.VListener;
+
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 
 public class PnlLogros extends JPanel {
+	public static final String ACT_CMN_BTN_VOLVER = " ";
 	private static final int ANCHO = 630;
 	private static final int ALTO = 650;
 	private JTextField txtJPerfectos;
 	private JTextField txtJEpicos;
 	private JTextField txtJMagicos;
+	private JButton btnVolver;
 	
 	public PnlLogros() {
 		
 		setSize(ANCHO, ALTO);
+		setBackground(new Color(84, 90, 246));
+		
+		crearComponentes();
+	}
+
+	private void crearComponentes() {
+		
 		setLayout(null);
 		
 		JLabel lblLogros = new JLabel("Logros");
@@ -82,18 +92,17 @@ public class PnlLogros extends JPanel {
 		lblGuardianLenguaje3.setBounds(429, 522, 136, 35);
 		add(lblGuardianLenguaje3);
 		
-		JButton btnVolver = new JButton("");
+		btnVolver = new JButton(ACT_CMN_BTN_VOLVER);
 		btnVolver.setIcon(new ImageIcon(PnlLogros.class.getResource("/img/imgVolver.jpg")));
 		btnVolver.setBounds(552, 10, 78, 90);
 		add(btnVolver);
-		
-		crearComponentes();
 	}
-
-	private void crearComponentes() {
-		
-		setBackground(new Color(84, 90, 246));
-		
-		
+	
+	public void hacerVisible() {
+		setVisible(true);
+	}
+	
+	public void setListener (VListener listener) {
+		btnVolver.addActionListener(listener);
 	}
 }
