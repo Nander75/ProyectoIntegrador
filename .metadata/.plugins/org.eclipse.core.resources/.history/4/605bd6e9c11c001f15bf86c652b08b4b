@@ -1,0 +1,9 @@
+package com.dam.db;
+
+public class UsuariosContract {
+	
+	public static final String NOM_TABLA_USUARIOS = "USUARIOS";
+	
+	
+	
+}

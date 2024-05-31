@@ -1,0 +1,6 @@
+1701676485325	Extract method 'solicitarTamanio'
+1701676553384	Extract method 'inicializarRellenar'
+1701676598163	Extract method 'mostrarArraySuma'
+1701677759076	Extract method 'inicializarRellenar'
+1701678883925	Extract method 'mostrarArrayMayor'
+1701679832046	Delete element

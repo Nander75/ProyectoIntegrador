@@ -1,0 +1,42 @@
+package com.dam.ej3.pojo;
+
+public class Pelicula {
+	
+	static final double MIN_HORA = 60;
+	
+	private String titulo;
+	private int anioPublicacion;
+	private int duracion;
+	private String director;
+	
+	public Pelicula(String titulo, int anioPublicacion, 
+			int duracion, String director) {
+		this.titulo = titulo;
+		this.anioPublicacion = anioPublicacion;
+		this.duracion = duracion;
+		this.director = director;
+	}
+	
+	public double calcularDuracionHoras() {
+		double duracionH = duracion / MIN_HORA;
+				
+		return duracionH;
+	}
+
+	public int getDuracion() {
+		return duracion;
+	}
+
+	public int getAnioPublicacion() {
+		return anioPublicacion;
+	}
+
+	@Override
+	public String toString() {
+		return "\"" + titulo + "\" - " + anioPublicacion + " - " 
+				+ calcularDuracionHoras() + " horas"
+				+ "\nDirector: " + director;
+	}
+
+	
+}

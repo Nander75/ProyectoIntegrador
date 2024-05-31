@@ -1,0 +1,68 @@
+package com.dam.ej3.main;
+
+import java.util.Scanner;
+
+import com.dam.ej3.pojo.EquipoFutbol;
+
+public class CompararResultados {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		// solicitar los datos de dos equipos
+		String nombre;
+		String ciudad;
+		int numPG;
+		int numPE;
+		int numPP;
+		
+		System.out.println("Introduce el nombre del equipo 1:");
+		nombre = sc.nextLine();
+		
+		System.out.println("A qué ciudad pertence el equipo 1?");
+		ciudad = sc.nextLine();
+		
+		System.out.println("Cuántos partidos ganados lleva el equipo 1?");
+		numPG = Integer.parseInt(sc.nextLine());
+		
+		System.out.println("Cuántos partidos empatados lleva el equipo 1?");
+		numPE = Integer.parseInt(sc.nextLine());
+		
+		System.out.println("Cuántos partidos perdidos lleva el equipo 1?");
+		numPP = Integer.parseInt(sc.nextLine());
+		
+		EquipoFutbol eq1 = new EquipoFutbol(nombre, ciudad, numPG, numPE, numPP);
+		
+		System.out.println("Introduce el nombre del equipo 2:");
+		nombre = sc.nextLine();
+		
+		System.out.println("A qué ciudad pertence el equipo 2?");
+		ciudad = sc.nextLine();
+		
+		System.out.println("Cuántos partidos ganados lleva el equipo 2?");
+		numPG = Integer.parseInt(sc.nextLine());
+		
+		System.out.println("Cuántos partidos empatados lleva el equipo 2?");
+		numPE = Integer.parseInt(sc.nextLine());
+		
+		System.out.println("Cuántos partidos perdidos lleva el equipo 2?");
+		numPP = Integer.parseInt(sc.nextLine());
+		
+		EquipoFutbol eq2 = new EquipoFutbol(nombre, ciudad, numPG, numPE, numPP);
+		
+		int numPtosEq1 = eq1.calcularPuntos();
+		int numPtosEq2 = eq2.calcularPuntos();
+		
+		if (numPtosEq1 > numPtosEq2) {
+			System.out.println("El equipo con más puntos es el equipo: " + eq1 + " \ncon " + numPtosEq1 + " puntos");
+		} else if (numPtosEq2 > numPtosEq1) {
+			System.out.println("El equipo con más puntos es el equipo: " + eq2 + " \ncon " + numPtosEq2 + " puntos");
+		} else {
+			System.out.println("El equipo 1: " + eq1 + "\n y el equipo 2: " + eq2 + " \ntienen los mismos puntos: " + numPtosEq2);
+		}
+		
+		sc.close();
+
+	}
+
+}

@@ -1,0 +1,36 @@
+package com.dam.clasesprueba;
+
+public class MiSegundaClase {
+	
+	// Las constantes se definen siempre al principio de la clase
+	// Para definir una constante usamos las palabras reservadas static y final
+	// Las constantes se nombran siempre en mayúsculas
+	static final double PI = 3.14;
+	
+	/*
+	 * Cuando definimos variables tenemos que realizar dos pasos: DECLARAR e INICIALIZAR
+	 * DECLARAR: especificar tipo y nombre
+	 * INICIALIZAR: asignar un valor
+	 */
+	
+	// declaración de la variable de tipo int y de nombre edad
+	// e inicialización al valor 22
+	int edad = 22;
+	
+	// declaración de la variable de tipo String y de nombre apellido
+	// e inicialización al valor García
+	String apellido = "García";
+	
+	/* TIPOS DE DATOS PRIMITIVOS
+	 * byte (numérico)
+	 * short (entero 16 bits --> 2 bytes)
+	 * int 	 (entero 32 bits --> 4 bytes) *
+	 * long  (entero 64 bits --> 8 bytes)
+	 * float  (decimales 32 bits --> 4 bytes)
+	 * double (decimales 64 bits --> 8 bytes) *
+	 * char (caracter (letras, signos, espacio, dígitos) 16 bits --> 2 bytes) *
+	 * boolean (lógico: true o false 1 bits) *
+	 */
+	
+
+}

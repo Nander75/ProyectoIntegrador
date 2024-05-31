@@ -1,0 +1,19 @@
+package com.dam.ej1.pojo;
+
+// clase POJO
+public class Clase1 {
+	
+	private double valor;  
+	private int x;  
+	
+	// constructor por defector
+	public Clase1() {
+		valor = 9.8;
+		x = 7;
+	}
+
+	public void imprimir(double valor, int x) {
+		System.out.println(valor + " y " + this.x);  
+	} 
+
+}

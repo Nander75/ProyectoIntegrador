@@ -1,0 +1,22 @@
+package com.dam.clasesprueba;
+
+public class PruebasOperadoresAritmetico {
+
+	public static void main(String[] args) {
+		
+		// OPERADORES ARITMÉTICOS
+		// + : entre dos variables numéricas es una suma
+		// + : entre dos variables, donde al menos una sea cadena de caracteres es concatenación
+		
+		
+		int a = 3;
+		int b = 8;
+		int c = a + b;
+		
+		String mensaje = "El valor de c es" + c;
+		
+		System.out.println(mensaje);
+
+	}
+
+}

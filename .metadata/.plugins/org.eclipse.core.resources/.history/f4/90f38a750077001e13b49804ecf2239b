@@ -1,0 +1,30 @@
+package com.dam.ej3.pojo;
+
+public class EquipoFutbol {
+	
+	static final int PTOS_PARTIDO_G = 3;
+	static final int PTOS_PARTIDO_E = 1;
+	
+	private String nombre;
+	private String ciudad;
+	private int numPartidosG;
+	private int numPartidosE;
+	private int numPartidosP;
+	
+	public EquipoFutbol(String nombre, String ciudad, int numPartidosG, int numPartidosE, int numPartidosP) {
+		this.nombre = nombre;
+		this.ciudad = ciudad;
+		this.numPartidosG = numPartidosG;
+		this.numPartidosE = numPartidosE;
+		this.numPartidosP = numPartidosP;
+	}
+	
+	public int calcularPuntos() {
+		int puntos = numPartidosG * PTOS_PARTIDO_G + numPartidosE * PTOS_PARTIDO_E;
+		
+		return puntos;
+	}
+	
+	
+
+}

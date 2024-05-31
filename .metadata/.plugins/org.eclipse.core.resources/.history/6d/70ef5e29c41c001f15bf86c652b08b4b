@@ -1,0 +1,2 @@
+DRIVER=sqlite-jdbc.jar
+URL=jdbc:sqlite:BBDD/Proyecto.sql

@@ -15,6 +15,8 @@ import java.awt.Color;
 
 public class VPMenu extends JFrame {
 
+	 
+	private static final long serialVersionUID = 1L;
 	public static final String ACT_CMN_BTN_INICIARSESION = "Iniciar Sesion";
 	public static final String ACT_CMN_BTN_TERMINOS = "Terminos";
 	public static final String ACT_CMN_BTN_PRIVACIDAD = "Privacidad";
@@ -25,8 +27,6 @@ public class VPMenu extends JFrame {
 	
 	private JButton btnIniciarSesion;
 	private JButton btnRegistrarse;
-	private JButton btnPrivacidad;
-	private JButton btnTerminos;
 	private JButton btnImagen;
 	
 	public VPMenu() {
@@ -63,18 +63,6 @@ public class VPMenu extends JFrame {
 		btnRegistrarse.setBounds(208, 417, 199, 36);
 		getContentPane().add(btnRegistrarse);
 		
-		btnPrivacidad = new JButton(ACT_CMN_BTN_PRIVACIDAD);
-		btnPrivacidad.setBackground(new Color(255, 255, 0));
-		btnPrivacidad.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
-		btnPrivacidad.setBounds(115, 502, 135, 27);
-		getContentPane().add(btnPrivacidad);
-		
-		btnTerminos = new JButton(ACT_CMN_BTN_TERMINOS);
-		btnTerminos.setBackground(new Color(255, 255, 0));
-		btnTerminos.setFont(new Font("Trebuchet MS", Font.BOLD, 14));
-		btnTerminos.setBounds(365, 502, 135, 27);
-		getContentPane().add(btnTerminos);
-		
 		btnImagen = new JButton("");
 		btnImagen.setIcon(new ImageIcon(VPMenu.class.getResource("/img/Enchiridion.jpg")));
 		btnImagen.setBounds(226, 59, 163, 222);
@@ -88,8 +76,17 @@ public class VPMenu extends JFrame {
 	public void setListener (VListener listener) {
 		btnRegistrarse.addActionListener(listener);
 		btnIniciarSesion.addActionListener(listener);
-		btnTerminos.addActionListener(listener);
 	}
+
+	public JButton getBtnIniciarSesion() {
+		return btnIniciarSesion;
+	}
+
+	public JButton getBtnRegistrarse() {
+		return btnRegistrarse;
+	}
+	
+	
 	
 	//TODO public DatosUsuario getDatosUsuario()
 }

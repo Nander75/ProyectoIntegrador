@@ -1,0 +1,58 @@
+package com.dam.ej3.main;
+
+import java.util.Scanner;
+
+import com.dam.ej3.pojo.Pelicula;
+
+public class CompararPeliculas2 {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Indica el número de películas que se van a introducir");
+		int numPelis = Integer.parseInt(sc.nextLine());
+		
+		String titulo;
+		int anioP;
+		int dur;
+		String dir;
+		Pelicula peli;
+		Pelicula peliMasLarga = new Pelicula("", 0, Integer.MIN_VALUE, "");
+		Pelicula peliMasAntigua = new Pelicula("", Integer.MAX_VALUE, 0, "");
+				
+		for (int i = 0; i < numPelis; i++) {
+			// solicitar datos pelicula
+			System.out.println("\nIntroduce el título de la película " + (i + 1));
+			titulo = sc.nextLine();
+			
+			System.out.println("Introduce el año de publicación");
+			anioP = Integer.parseInt(sc.nextLine());
+			
+			System.out.println("Introduce la duración en minutos");
+			dur = Integer.parseInt(sc.nextLine());
+			
+			System.out.println("Introduce el director");
+			dir = sc.nextLine();
+			
+			peli = new Pelicula(titulo, anioP, dur, dir);
+			
+			// comparamos la duración para determinar la película con MAYOR duración 
+			if (peli.getDuracion() > peliMasLarga.getDuracion()) {
+				peliMasLarga = peli;
+			}
+			
+			// comparamos el año de publicación
+			if (peli.getAnioPublicacion() < peliMasAntigua.getAnioPublicacion()) {
+				peliMasAntigua = peli;
+			}
+
+			
+		}
+		
+		System.out.println("La película de mayor duración es: \n" + peliMasLarga );
+		System.out.println("\nLa película más antigua es: \n" + peliMasAntigua);
+		
+		sc.close();
+
+	}
+
+}

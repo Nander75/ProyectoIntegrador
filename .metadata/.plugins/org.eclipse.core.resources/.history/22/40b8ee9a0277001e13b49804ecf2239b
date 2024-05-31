@@ -1,0 +1,40 @@
+package com.dam.ej3.main;
+
+import java.util.Scanner;
+
+import com.dam.ej3.pojo.EquipoFutbol;
+
+public class CompararResultados {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		// solicitar los datos de dos equipos
+		String nombre;
+		String ciudad;
+		int numPG;
+		int numPE;
+		int numPP;
+		
+		System.out.println("Introduce el nombre del equipo 1:");
+		nombre = sc.nextLine();
+		
+		System.out.println("A qué ciudad pertence el equipo 1?");
+		ciudad = sc.nextLine();
+		
+		System.out.println("Cuántos partidos ganados lleva el equipo 1?");
+		numPG = Integer.parseInt(sc.nextLine());
+		
+		System.out.println("Cuántos partidos empatados lleva el equipo 1?");
+		numPE = Integer.parseInt(sc.nextLine());
+		
+		System.out.println("Cuántos partidos perdidos lleva el equipo 1?");
+		numPP = Integer.parseInt(sc.nextLine());
+		
+		EquipoFutbol eq1 = new EquipoFutbol(nombre, ciudad, numPG, numPE, numPP);
+		
+		sc.close();
+
+	}
+
+}

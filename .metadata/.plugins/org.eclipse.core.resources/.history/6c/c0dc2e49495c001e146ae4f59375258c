@@ -1,0 +1,10 @@
+package com.dam.clasesprueba;
+
+public class PruebasConversion {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

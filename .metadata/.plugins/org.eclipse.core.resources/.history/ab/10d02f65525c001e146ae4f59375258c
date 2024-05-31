@@ -1,0 +1,48 @@
+package com.dam.clasesprueba;
+
+public class PruebasOperadoresAritmetico {
+
+	public static void main(String[] args) {
+		
+		// OPERADORES ARITMÉTICOS
+		// + : entre dos variables numéricas es una suma
+		// + : entre dos variables, donde al menos una sea cadena de caracteres es concatenación
+			
+		int a = 3;
+		int b = 8;
+		int c = a + b;
+		
+		String mensaje = "El valor de c es " + c;
+		
+		// syso va a mostrar por consola el valor de la variable mensaje
+		System.out.println(mensaje);
+		
+		// - : entre dos variables numéricas es una resta
+		// * : entre dos variables numéricas es una multiplicación
+		// / : entre dos variables numéricas es una división
+		// % : entre dos variables enteras es el resto de dividir esas dos variables
+		
+		// nueva asignación de c
+		c = b - a;
+		
+		mensaje = "Ahora el valor de c es " + c;
+		
+		System.out.println(mensaje);
+		
+		int d = c;
+		c = d / a; // teniendo en cuenta que c en este punto vale 5 y a vale 3, c pasa a tener valor 1
+		
+		mensaje = "El cociente de dividir " + d + " entre " + a + " es " + c;
+		
+		System.out.println(mensaje);
+		
+		// % : entre dos variables enteras es el resto de dividir esas dos variables
+		c = d % a;
+		
+		mensaje = "El resto de dividir " + d + " entre " + a + " es " + c;
+		
+		System.out.println(mensaje);
+
+	}
+
+}

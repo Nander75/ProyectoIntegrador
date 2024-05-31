@@ -1,0 +1,28 @@
+package com.dam.ej1;
+
+/*
+ * Crea una clase, Ejercicio1, que imprima por consola, usando un bucle, 18
+términos de la serie 94 - 88 - 82 – 76 – 70 - ..
+ */
+public class Ejercicio1 {
+
+	static final int TERMINO_INICIAL = 94;
+	static final int DIF_TERMINOS = 6;
+	static final int NUM_TERMINOS = 18;
+	
+	public static void main(String[] args) {
+		
+		int termino = TERMINO_INICIAL;
+		for (int i = 1; i <= NUM_TERMINOS; i++) {
+			System.out.print(termino);
+			
+			if (i < NUM_TERMINOS) {
+				System.out.print(" - ");
+			}
+			
+			termino -= DIF_TERMINOS;
+		}
+
+	}
+
+}

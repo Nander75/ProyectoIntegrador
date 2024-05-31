@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.Double"/>
+    <fullyQualifiedTypeName name="java.lang.Math"/>
+    <fullyQualifiedTypeName name="com.dam.pojos.Libro"/>
+    <fullyQualifiedTypeName name="com.dam.ej1.pojo.Coche"/>
+    <fullyQualifiedTypeName name="com.dam.ej3.pojo.Helipuerto"/>
+    <fullyQualifiedTypeName name="com.dam.ej4.pojo.CampoFutbol"/>
+    <fullyQualifiedTypeName name="com.dam.ejPF.pojo.PartidoFutbol"/>
+    <fullyQualifiedTypeName name="com.dam.ejP.pojo.Piramide"/>
+    <fullyQualifiedTypeName name="com.dam.ejif.pojo.Rueda"/>
+    <fullyQualifiedTypeName name="com.dam.ejswitch.pojo.Jugador"/>
+    <fullyQualifiedTypeName name="com.dam.ej3.pojo.EquipoFutbol"/>
+    <fullyQualifiedTypeName name="com.dam.ej3.pojo.Pelicula"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="com.dam.ej1.pojo.Clase1"/>
+    <fullyQualifiedTypeName name="com.dam.ej2.pojo.Clase2"/>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+    <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+    <fullyQualifiedTypeName name="java.util.Random"/>
+    <fullyQualifiedTypeName name="com.dam.ej9.pojo.Encuesta"/>
+    <fullyQualifiedTypeName name="dam.ej2.a.pojo.Lenguaje"/>
+    <fullyQualifiedTypeName name="dam.ej2.a.pojo.Encuesta"/>
+    <fullyQualifiedTypeName name="com.dam.ej2.pojo.CorrecionEstacion"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="com.dam.ej1.pojo.Volcan"/>
+    <fullyQualifiedTypeName name="javax.swing.JPanel"/>
+</qualifiedTypeNameHistroy>
